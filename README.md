@@ -1,5 +1,5 @@
 # CAMS
-## CAMS: An Annotated Corpus for Causal Analysis of Mental Health Issues in Social Media Posts
+## An Annotated Corpus for Causal Analysis of Mental Health Issues in Social Media Posts
 
 This repository is created to support the paper 'CAMS: An Annotated Corpus for Causal Analysis of Mental health on Social media' (accepted in Language Resources and Evaluation Conference LREC'2022)
 
