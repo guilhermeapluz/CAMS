@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 
 # Printing a sample
 def print_plot(df,index):
-    example = df[df.index == index+1][['text', 'label']].values[0]
+    example = df[df.index == index+1][['text', 'cause', 'inference']].values[0]
     if len(example) > 0:
         print(example[0])
         print('text:', example[1])
