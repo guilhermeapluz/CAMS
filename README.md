@@ -17,3 +17,11 @@ The labeled data could be downloaded from [here](https://github.com/CMOONCS/CAMS
   - with feedback regarding the corpus.
   - with information on how you have used the corpus.
   - if interested in a collaborative research project.
+
+
+### Steps to run on Github Codespaces
+- You must install Python v3.8 and pip (as described in devcontainer.json)
+- Instal python dependences
+  ```bash
+  pip install -r requirements.txt
+  ```
