@@ -18,6 +18,39 @@ The labeled data could be downloaded from [here](https://github.com/CMOONCS/CAMS
   - with information on how you have used the corpus.
   - if interested in a collaborative research project.
 
+### Steps to run on WSL (Ubuntu 20.04)
+- Add “deadsnakes” PPA to Your Machine
+  ```bash
+  sudo add-apt-repository ppa:deadsnakes/ppa
+  ```
+
+- Install Python 3.8 via “apt”
+  ```bash
+  sudo apt install python3.8 -y
+  ```
+
+- Install pip for Python 3
+  ```bash
+  sudo apt update
+  sudo apt install python3-pip
+  ```
+
+- Install ipython for Python 3
+  ```bash
+  sudo apt install ipython3
+  ```
+
+- Install Jupyter
+  ```bash
+  pip3 install jupyter
+  ```
+
+- Create alias to launch jupyter without browser from the WSL:
+  - Open your bash configuration: ```vim ~/.bashrc ```
+  - Add to the end of the file and save/exit:
+  ``` alias jupyter-notebook="~/.local/bin/jupyter-notebook --no-browser" ```
+
+Now you can run a jupyter server ``` jupyter-notebook ``` and access the service with your browser from Windows ``` localhost:8888 ```.
 
 ### Steps to run on Github Codespaces
 - You must install Python v3.8 and pip (as described in devcontainer.json)
