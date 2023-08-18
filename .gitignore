@@ -2,3 +2,9 @@
 .idea/
 __pycache__/
 .DS_Store
+venv
+embeddings/glove*.txt
+plot_results/*
+*.old
+.backup
+tweets_to_predict.csv

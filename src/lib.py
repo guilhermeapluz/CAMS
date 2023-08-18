@@ -6,14 +6,17 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import numpy as np
 import pandas as pd
+PATHTOSAVE = 'plot_results/'
 
 
-def plot_accuracy(history, epochs):
+def plot_accuracy(history, epochs, namefile='result'):
     plt.figure(figsize=(15, 7))
     plt.plot(range(epochs), history.history['accuracy'])
     plt.plot(range(epochs), history.history['val_accuracy'])
     plt.legend(['training_acc', 'validation_acc'])
     plt.title('Accuracy')
+    plt.suptitle(namefile)
+    plt.savefig(f"{PATHTOSAVE}{namefile}.png")
 
 
 def train_test_accuracy(model, X_train, Y_train, X_test, Y_test):
@@ -74,6 +77,6 @@ def print_confusion(model, X_test, Y_test):
     # plt.title('Confusion Matrix')
     plt.ylabel('Actual Labels', fontsize=30, weight='bold')
     plt.xlabel('Predicted Labels', fontsize=30, weight='bold')
-    plt.savefig("conf_mat.pdf", dpi=1000)
+    plt.savefig(f"{PATHTOSAVE}conf_mat.png", dpi=1000)
 
     plt.show()
