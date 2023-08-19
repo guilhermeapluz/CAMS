@@ -10,7 +10,7 @@ PATHTOSAVE = 'plot_results/'
 
 
 def plot_accuracy(history, epochs, namefile='result'):
-    plt.figure(figsize=(15, 7))
+    # plt.figure(figsize=(15, 7))
     plt.plot(range(epochs), history.history['accuracy'])
     plt.plot(range(epochs), history.history['val_accuracy'])
     plt.legend(['training_acc', 'validation_acc'])
