@@ -43,13 +43,11 @@ import glob
 
 def LSTM_model(embedding_matrix, vocab_len, emb_dim):
     lstm_model = Sequential()
-    lstm_model.add(Embedding(vocab_len, emb_dim,
-                   trainable=False, weights=[embedding_matrix]))
+    lstm_model.add(Embedding(vocab_len, emb_dim,trainable=False, weights=[embedding_matrix]))
     lstm_model.add(LSTM(128, return_sequences=False))
     lstm_model.add(Dropout(0.5))
     lstm_model.add(Dense(6, activation='sigmoid'))
-    lstm_model.compile(loss='categorical_crossentropy',
-                       optimizer='adam', metrics=['accuracy'])
+    lstm_model.compile(loss='categorical_crossentropy',optimizer='adam', metrics=['accuracy'])
     print(lstm_model.summary())
     return lstm_model
 
@@ -57,17 +55,13 @@ def LSTM_model(embedding_matrix, vocab_len, emb_dim):
 def CNN_model(embedding_matrix, vocab_len):
     emb_dim = embedding_matrix.shape[1]
     cnn_model = Sequential()
-    cnn_model.add(Embedding(vocab_len, emb_dim,
-                  trainable=False, weights=[embedding_matrix]))
-    cnn_model.add(layers.Conv1D(filters=128, kernel_size=3,
-                  padding='same', activation='relu'))
+    cnn_model.add(Embedding(vocab_len, emb_dim,trainable=False, weights=[embedding_matrix]))
+    cnn_model.add(layers.Conv1D(filters=128, kernel_size=3,padding='same', activation='relu'))
     cnn_model.add(layers.MaxPooling1D(5))
-    cnn_model.add(layers.Conv1D(filters=128, kernel_size=3,
-                  padding='same', activation='relu'))
+    cnn_model.add(layers.Conv1D(filters=128, kernel_size=3,padding='same', activation='relu'))
     cnn_model.add(layers.GlobalMaxPooling1D())
     cnn_model.add(layers.Dense(6, activation='sigmoid'))
-    cnn_model.compile(optimizer='adam',
-                      loss='categorical_crossentropy', metrics=['accuracy'])
+    cnn_model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
     cnn_model.summary()
     return cnn_model
 

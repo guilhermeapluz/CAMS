@@ -159,5 +159,3 @@ def clean_text(content):
     text = ' '.join(filtered_sentence)
     return text
 
-
-### Applying Text Cleanup Preprocesses for Train and Test dataset ###

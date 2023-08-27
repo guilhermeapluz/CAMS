@@ -6,7 +6,7 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import numpy as np
 import pandas as pd
-PATHTOSAVE = 'plot_results/'
+PATHTOSAVE = 'results/plot/'
 
 
 def plot_accuracy(history, epochs, namefile='result'):
